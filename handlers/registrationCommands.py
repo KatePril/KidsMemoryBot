@@ -8,12 +8,12 @@ from keyboard.main_kb import main_kb, log_in_kb
 from keyboard.menu_kb import menu_kb
 
 users = load_users()
-current_user = None
+current_user = {}
 
 @dp.message_handler(commands=['start', 'help'])
 async def send_welcome(message: types.Message):
         global current_user
-        current_user = None
+        current_user = {}
         await message.answer("Hello, welcome to KidsMemoryBot. Look through the opening menu and choose one of the options", reply_markup = main_kb)
         
 @dp.callback_query_handler(text_contains='log_in') 
