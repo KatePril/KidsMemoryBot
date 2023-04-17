@@ -9,6 +9,7 @@ from random import shuffle
 from module_body import open_photo, generate_answers_markup
 from keyboard.modules_kb import modules_kb, generate_again_kb
 from grades_data import grades_stickers
+from utils import update_changes
 
 current_module = None
 current_question = 1
@@ -79,6 +80,7 @@ async def reply_wrong_answer(call: types.CallbackQuery):
             await call.message.answer('Choose the next module', reply_markup=modules_kb)
         else:
             await call.message.answer('Try again', reply_markup=generate_again_kb(current_module_name))
+        update_changes(current_user.get('login'), current_module_name, current_points)
         current_module_name = ''
         current_points = 0
         current_question = 1
@@ -99,6 +101,7 @@ async def reply_correct_answer(call: types.CallbackQuery):
             await call.message.answer('Choose the next module', reply_markup=modules_kb)
         else:
             await call.message.answer('Try again', reply_markup=generate_again_kb(current_module_name))
+        update_changes(current_user.get('login'), current_module_name, current_points)
         current_module_name = ''
         current_points = 0
         current_question = 1
