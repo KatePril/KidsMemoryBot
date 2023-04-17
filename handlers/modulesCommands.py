@@ -72,7 +72,7 @@ async def start_vegetables(call: types.CallbackQuery):
 @dp.callback_query_handler(text_contains='wrong_')
 async def reply_wrong_answer(call: types.CallbackQuery):
     global current_module, current_question, current_points, current_module_name
-    if current_question == 10:
+    if current_question == 11:
         await call.message.answer(f'It is the end of the module. Your points are {current_points}')
         await call.message.answer_sticker(grades_stickers[current_points])
         if current_points > 4:
@@ -85,13 +85,14 @@ async def reply_wrong_answer(call: types.CallbackQuery):
         current_module = None
     else:
         await call.message.answer_sticker('CAACAgIAAxkBAAIBAWQ8Lj_VnjsQBO3CtuhH03sgUAeMAAJaAgACVp29ClvFwUJa4dm6LwQ')
-        current_question = current_question + 1
         await call.message.answer_photo(open_photo(current_module[current_question - 1]['path']), reply_markup=generate_answers_markup(current_module, current_module[current_question - 1]['name']))
+        current_question = current_question + 1
 
 @dp.callback_query_handler(text_contains='correct_')
 async def reply_correct_answer(call: types.CallbackQuery):
     global current_module, current_question, current_points, current_module_name
-    if current_question == 10:
+    current_points = current_points + 1
+    if current_question == 11:
         await call.message.answer(f'It is the end of the module. Your points are {current_points}')
         await call.message.answer_sticker(grades_stickers[current_points])
         if current_points > 4:
@@ -104,9 +105,8 @@ async def reply_correct_answer(call: types.CallbackQuery):
         current_module = None
     else:
         await call.message.answer_sticker('CAACAgIAAxkBAAPuZDvwj55ADV4_8jN97YFR-utbR0oAAiwAA_cCyA-8QeDI--FA0y8E')
-        current_question = current_question + 1
-        current_points = current_points + 1
         await call.message.answer_photo(open_photo(current_module[current_question - 1]['path']), reply_markup=generate_answers_markup(current_module, current_module[current_question - 1]['name']))
+        current_question = current_question + 1
 
         
 # CAACAgIAAxkBAAIBAWQ8Lj_VnjsQBO3CtuhH03sgUAeMAAJaAgACVp29ClvFwUJa4dm6LwQ -
