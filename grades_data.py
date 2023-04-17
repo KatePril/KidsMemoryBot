@@ -1,0 +1,11 @@
+grades_stickers = {0 : 'CAACAgIAAxkBAAPoZDvwAAFVBCwqRMfUn6rWyovHvCiOAAJ4DAACJkjxSdiJ13CZBk1nLwQ'
+                   , 1 : 'CAACAgIAAxkBAAPiZDvvtcXR7CB0TmDM3wf5a_SDgHoAAugBAAJWnb0KPlveqaGK0lYvBA'
+                   , 2 : 'CAACAgIAAxkBAAPkZDvv0MKSCJnVD4Ig6EyKs5j3zkoAAvMAA1advQpqG-vEx_qW_i8E'
+                   , 3 : 'CAACAgIAAxkBAAPmZDvv40OLVwkB7zfekTWQKOYp1xkAAocAA_cCyA_uep2bKiWldS8E'
+                   , 4 : 'CAACAgIAAxkBAAPqZDvwUD7tjCVQ5D84UMlA5QcEgB4AAiwAAztgJBT4989l_WdZmi8E'
+                   , 5 : 'CAACAgIAAxkBAAPsZDvwe9q0P-U_r6tM-GBhIIEU7M4AAj8AAztgJBSelpNLV7LZOC8E'
+                   , 6 : 'CAACAgIAAxkBAAPwZDvw1mXQxG9J7o14tPjPdhDIR8sAApgMAALyFiBL8aXg2dgvBr8vBA'
+                   , 7 : 'CAACAgIAAxkBAAPyZDvxCGmx6qd3P3RvaCAgajZKnXAAAm8AAztgJBQOnkfSKGE_9C8E'
+                   , 8 : 'CAACAgIAAxkBAAP2ZDvxzFy82RrVYFLSwrs0xFDCCc0AAvwBAAIWQmsKgVD0qbxgCgcvBA'
+                   , 9 : 'CAACAgEAAxkBAAP0ZDvxoazNtmvSWKEInGJKbfSmJn0AAj4CAALiUOBFvefdz6qY1UIvBA'
+                   , 10 : 'CAACAgIAAxkBAAIBA2Q8LmM4e5eNWHUrrwpCwE8DJNc-AAJFDAACep2YSjYZ6HXrpFMsLwQ'}

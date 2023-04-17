@@ -1,0 +1,50 @@
+[
+    {
+        "login": "Kate",
+        "password": "1233",
+        "progress": {
+            "domesticated animals": 0,
+            "wild animals": 0,
+            "pets": 0,
+            "jobs": 0,
+            "fruits": 0,
+            "vegetables": 0
+        }
+    },
+    {
+        "login": "Katya",
+        "password": "0000",
+        "progress": {
+            "domesticated animals": 0,
+            "wild animals": 0,
+            "pets": 0,
+            "jobs": 0,
+            "fruits": 0,
+            "vegetables": 0
+        }
+    },
+    {
+        "login": "Kateryna",
+        "password": "0000",
+        "progress": {
+            "domesticated animals": 0,
+            "wild animals": 0,
+            "pets": 0,
+            "jobs": 0,
+            "fruits": 0,
+            "vegetables": 0
+        }
+    },
+    {
+        "login": "Katerina",
+        "password": "1111",
+        "progress": {
+            "domesticated animals": 0,
+            "wild animals": 0,
+            "pets": 0,
+            "jobs": 0,
+            "fruits": 0,
+            "vegetables": 0
+        }
+    }
+]
