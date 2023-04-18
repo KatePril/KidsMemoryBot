@@ -15,7 +15,7 @@ async def get_modules(message: types.Message):
 @dp.message_handler(text='Progress 📊')
 async def get_process(message: types.Message):
     # await message.answer('Thanks for your choice', reply_markup=ReplyKeyboardRemove)
-    if (current_user != None):
-        await message.answer(f'Your progress:\n{give_sorted_progress(current_user["progress"])}')
+    if (current_user):
+        await message.answer(f'Your progress:\n{give_sorted_progress(current_user.get("progress"))}')
     else:
         await message.answer('Log in or sign in', reply_markup=main_kb)

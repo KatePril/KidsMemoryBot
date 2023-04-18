@@ -47,6 +47,7 @@ async def process_finish1(message: types.Message, state: FSMContext):
         else:
                 await message.answer("Try again")  
                 return
+        print(current_user)
 
 @dp.callback_query_handler(text_contains='sign_in') 
 async def start_sign_in(message: types.Message):
@@ -73,6 +74,7 @@ async def process_finish(message: types.Message, state: FSMContext):
         await message.answer(f'Welcome {data["login"]}', reply_markup=menu_kb)
         global current_user
         current_user = get_current_user(users, data['login'])
+        print(current_user)
 
 @dp.message_handler(content_types=types.ContentType.STICKER)
 async def echo(message: types.Message):
