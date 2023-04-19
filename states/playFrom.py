@@ -4,5 +4,5 @@ class PlayFrom(StatesGroup):
     # login = State()
     current_module = State()
     module_name = State()
-    current_question = 1
-    current_points = 0
+    current_question = State()
+    current_points = State()
