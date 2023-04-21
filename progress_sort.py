@@ -6,6 +6,7 @@ dict_tmp = {'domesticated animals' : 5
                 , 'fruits' : 7
                 , 'vegetables' : 3}
 '''
+from json import load, dump
 
 def string_progress(progress):
     tmp = ""
@@ -16,5 +17,15 @@ def string_progress(progress):
 def sort_progress(progress):
     return sorted(progress.items(), key=lambda item: item[1], reverse=True)
 
-def give_sorted_progress(progress):
-    return string_progress(sort_progress(progress))
+def give_sorted_progress(login):
+    return string_progress(sort_progress(get_user(login)))
+
+def get_user(login):
+    try:
+        with open('users.json', 'r+', encoding='utf-8') as fl:
+            users = load(fl)
+            for user in users:
+                if user['login'] == login:    
+                    return user['progress']
+    except FileNotFoundError:
+        return {}

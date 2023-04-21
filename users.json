@@ -4,11 +4,11 @@
         "password": "1233",
         "progress": {
             "domesticated animals": 0,
-            "wild animals": 0,
-            "pets": 0,
+            "wild animals": 3,
+            "pets": 7,
             "jobs": 0,
-            "fruits": 0,
-            "vegetables": 0
+            "fruits": 5,
+            "vegetables": 8
         }
     },
     {

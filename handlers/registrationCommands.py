@@ -81,6 +81,6 @@ async def echo(message: types.Message):
     await message.answer_sticker('CAACAgIAAxkBAAIBEWQ8MAABVwkMtzDAy3fSRwOYXu_LJQACXwADTlzSKXaSHy8QpwgkLwQ')
     print(message.sticker.file_id)
 
-# @dp.message_handler()
-# async def echo(message: types.Message):
-#         await message.answer_sticker('CAACAgIAAxkBAAIBB2Q8L4hlrkz5BEMa3OS5W-iYytexAAK6FgACi_oIStYglWIvKM6PLwQ')
+@dp.message_handler()
+async def echo(message: types.Message):
+        await message.answer_sticker('CAACAgIAAxkBAAIBB2Q8L4hlrkz5BEMa3OS5W-iYytexAAK6FgACi_oIStYglWIvKM6PLwQ')
