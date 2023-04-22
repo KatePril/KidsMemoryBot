@@ -3,10 +3,10 @@
         "login": "Kate",
         "password": "1233",
         "progress": {
-            "domesticated animals": 0,
+            "domesticated animals": 9,
             "wild animals": 3,
             "pets": 6,
-            "jobs": 0,
+            "jobs": 8,
             "fruits": 5,
             "vegetables": 8
         }
@@ -17,9 +17,9 @@
         "progress": {
             "domesticated animals": 0,
             "wild animals": 0,
-            "pets": 0,
-            "jobs": 0,
-            "fruits": 0,
+            "pets": 10,
+            "jobs": 10,
+            "fruits": 7,
             "vegetables": 0
         }
     },
@@ -28,7 +28,7 @@
         "password": "0000",
         "progress": {
             "domesticated animals": 0,
-            "wild animals": 0,
+            "wild animals": 9,
             "pets": 0,
             "jobs": 0,
             "fruits": 0,

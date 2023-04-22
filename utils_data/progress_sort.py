@@ -1,12 +1,4 @@
-'''
-dict_tmp = {'domesticated animals' : 5
-                , 'wild animals' : 10
-                , 'pets' : 0
-                , 'jobs' : 2
-                , 'fruits' : 7
-                , 'vegetables' : 3}
-'''
-from json import load, dump
+from json import load
 
 def string_progress(progress):
     tmp = ""

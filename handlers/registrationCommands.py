@@ -7,15 +7,12 @@ from states.registrationFrom import RegForm, RegForm1, create_accont, get_curren
 from states.MenuForm import MenuForm
 from keyboard.main_kb import main_kb, log_in_kb
 from keyboard.menu_kb import menu_kb
-from angry_stickers import get_angry_sticker
+from utils_data.angry_stickers import get_angry_sticker
 
-users = load_users()
-# current_user = {}
+# users = load_users()
 
 @dp.message_handler(commands=['start', 'help'])
 async def send_welcome(message: types.Message):
-        # global current_user
-        # current_user = {}
         await message.answer("Hello, welcome to KidsMemoryBot. Look through the opening menu and choose one of the options", reply_markup = main_kb)
         
 @dp.callback_query_handler(text='log_in') 
@@ -46,21 +43,18 @@ async def process_finish1(message: types.Message, state: FSMContext):
                 await message.answer(f'Welcome back {data["login"]}', reply_markup=menu_kb)
                 await MenuForm.main_menu.set()
                 await state.update_data(login=data['login'])
-                # global current_user
-                # current_user = get_current_user(users, data['login'])
         else:
                 await message.answer("Try again")  
                 return
-        # print(current_user)
 
-@dp.callback_query_handler(text_contains='sign_in') 
+@dp.callback_query_handler(text='sign_in') 
 async def start_sign_in(message: types.Message):
         await RegForm.login.set()
         await message.answer("Choose your login")
 
 @dp.message_handler(state=RegForm.login)
 async def process_login(message: types.Message, state: FSMContext):
-        if not message.text in [user['login'] for user in users]:
+        if not message.text in [user['login'] for user in load_users()]:
                 await state.update_data(login=message.text)
                 await RegForm.next()
                 await message.answer("Create a password")
@@ -72,15 +66,13 @@ async def process_login(message: types.Message, state: FSMContext):
 async def process_finish(message: types.Message, state: FSMContext):
         await state.update_data(password=message.text)
         data = await state.get_data()
+        users = load_users()
         users.append(create_accont(data['login'], data['password']))
         save_users(users)
         await state.finish()
         await message.answer(f'Welcome {data["login"]}', reply_markup=menu_kb)
         await MenuForm.main_menu.set()
         await state.update_data(login=data['login'])
-        # global current_user
-        # current_user = get_current_user(users, data['login'])
-        # print(current_user)
 
 @dp.message_handler(content_types=types.ContentType.STICKER)
 async def echo(message: types.Message):

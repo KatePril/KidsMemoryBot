@@ -5,7 +5,7 @@ from loader import dp
 from keyboard.modules_kb import modules_kb
 from keyboard.main_kb import main_kb
 # from handlers.registrationCommands import current_user
-from progress_sort import give_sorted_progress, get_user
+from utils_data.progress_sort import give_sorted_progress, get_user
 
 from states.MenuForm import MenuForm
 from states.playFrom import PlayFrom
@@ -41,11 +41,12 @@ async def get_modules(call: types.CallbackQuery, state: FSMContext):
     await call.message.answer('Choose one of the modules from the categories below', reply_markup=modules_kb)
     
     
-@dp.callback_query_handler(text_contains='progress', state = MenuForm)
+@dp.callback_query_handler(text='progress', state = MenuForm)
 async def get_process(call: types.CallbackQuery, state: FSMContext):
     # await message.answer('Thanks for your choice', reply_markup=ReplyKeyboardRemove)
     # if (current_user):
     data = await state.get_data()
+    data
     await call.message.answer(f'Your progress:\n{give_sorted_progress(data.get("login"))}')
     # else:
     #     await call.message.answer('Log in or sign in', reply_markup=main_kb)

@@ -11,7 +11,6 @@ def load_users():
         return []
 
 def save_users(users):
-    print('ok1')
     with open('users.json', 'w', encoding='utf-8') as fl:
         dump(users, fl, indent=4, ensure_ascii=False)
 
@@ -21,10 +20,8 @@ def update_changes(login, module, current_score):
             users = load(fl)
             for user in users:
                 if user['login'] == login:
-                    print('ok')    
                     user['progress'][module] = current_score
                     break
             return users
-            # dump(users, fl, indent=4, ensure_ascii=False)
     except FileNotFoundError:
         pass
