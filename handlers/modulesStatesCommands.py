@@ -12,6 +12,8 @@ from keyboard.menu_kb import menu_kb
 from grades_data import grades_stickers
 from utils import update_changes, load_users, save_users
 
+
+from states.MenuForm import MenuForm
 from states.playFrom import PlayFrom
 from aiogram.dispatcher import FSMContext
 
@@ -79,6 +81,7 @@ async def reply_wrong_answer(call: types.CallbackQuery, state: FSMContext):
         if data["current_points"] > 4:
             await state.finish()
             await call.message.answer('Congradulations🎊🎉. Now, you can move forward', reply_markup=menu_kb)
+            await MenuForm.main_menu.set()
         else:
             await state.finish()
             await call.message.answer('Try again😢', reply_markup=generate_again_kb(data['module_name']))
@@ -94,7 +97,7 @@ async def reply_correct_answer(call: types.CallbackQuery, state: FSMContext):
     data = await state.get_data()
     # current_points = current_points + 1
     await state.update_data(current_points = data['current_points'] + 1)
-    save_users(update_changes("Kate", data['module_name'], data["current_points"] + 1))
+    save_users(update_changes(data.get('login'), data['module_name'], data["current_points"] + 1))
     print(data['current_points'])
     if data['current_question'] == 11:
         await call.message.answer(f'It is the end of the module. Your points are {data["current_points"] + 1}')
@@ -102,6 +105,7 @@ async def reply_correct_answer(call: types.CallbackQuery, state: FSMContext):
         if data["current_points"] > 4:
             await state.finish()
             await call.message.answer('Congradulations🎊🎉. Now, you can move forward', reply_markup=menu_kb)
+            await MenuForm.main_menu.set()
         else:
             await state.finish()
             await call.message.answer('Try again😢', reply_markup=generate_again_kb(data['module_name']))
