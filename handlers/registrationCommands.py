@@ -6,6 +6,7 @@ from utils import load_users, save_users
 from states.registrationFrom import RegForm, RegForm1, create_accont, get_current_user
 from keyboard.main_kb import main_kb, log_in_kb
 from keyboard.menu_kb import menu_kb
+from angry_stickers import get_angry_sticker
 
 users = load_users()
 current_user = {}
@@ -78,9 +79,9 @@ async def process_finish(message: types.Message, state: FSMContext):
 
 @dp.message_handler(content_types=types.ContentType.STICKER)
 async def echo(message: types.Message):
-    await message.answer_sticker('CAACAgIAAxkBAAIBEWQ8MAABVwkMtzDAy3fSRwOYXu_LJQACXwADTlzSKXaSHy8QpwgkLwQ')
+    await message.answer_sticker(get_angry_sticker())
     print(message.sticker.file_id)
 
 @dp.message_handler()
 async def echo(message: types.Message):
-        await message.answer_sticker('CAACAgIAAxkBAAIBB2Q8L4hlrkz5BEMa3OS5W-iYytexAAK6FgACi_oIStYglWIvKM6PLwQ')
+        await message.answer_sticker(get_angry_sticker())
