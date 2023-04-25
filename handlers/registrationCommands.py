@@ -3,13 +3,14 @@ from aiogram.dispatcher import FSMContext
 
 from loader import dp
 from utils import load_users, save_users
-from states.registrationFrom import RegForm, RegForm1, create_accont, get_current_user
+from utils_data.password_code import make_md5_password
+
+from states.registrationFrom import RegForm, RegForm1, create_accont
 from states.MenuForm import MenuForm
 from keyboard.main_kb import main_kb, log_in_kb
 from keyboard.menu_kb import menu_kb
 from utils_data.angry_stickers import get_angry_sticker
 
-# users = load_users()
 
 @dp.message_handler(commands=['start', 'help'])
 async def send_welcome(message: types.Message):
@@ -37,7 +38,7 @@ async def process_finish1(message: types.Message, state: FSMContext):
                 if user['login'] == data['login']:
                         correct_password = user['password'] #md5 hash
                         break
-        if message.text == correct_password:
+        if make_md5_password(message.text) == correct_password:
                 # await state.update_data(password=message.text)
                 await state.finish()
                 await message.answer(f'Welcome back {data["login"]}', reply_markup=menu_kb)
@@ -64,7 +65,7 @@ async def process_login(message: types.Message, state: FSMContext):
 
 @dp.message_handler(state=RegForm.password)
 async def process_finish(message: types.Message, state: FSMContext):
-        await state.update_data(password=message.text)
+        await state.update_data(password=make_md5_password(message.text))
         data = await state.get_data()
         users = load_users()
         users.append(create_accont(data['login'], data['password']))

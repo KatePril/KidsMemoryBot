@@ -1,7 +1,7 @@
 [
     {
         "login": "Kate",
-        "password": "1233",
+        "password": "e034fb6b66aacc1d48f445ddfb08da98",
         "progress": {
             "domesticated animals": 9,
             "wild animals": 3,
@@ -13,7 +13,7 @@
     },
     {
         "login": "Katya",
-        "password": "0000",
+        "password": "4a7d1ed414474e4033ac29ccb8653d9b",
         "progress": {
             "domesticated animals": 0,
             "wild animals": 0,
@@ -25,7 +25,7 @@
     },
     {
         "login": "Kateryna",
-        "password": "0000",
+        "password": "4a7d1ed414474e4033ac29ccb8653d9b",
         "progress": {
             "domesticated animals": 0,
             "wild animals": 9,
@@ -37,7 +37,19 @@
     },
     {
         "login": "Katerina",
-        "password": "1111",
+        "password": "b59c67bf196a4758191e42f76670ceba",
+        "progress": {
+            "domesticated animals": 0,
+            "wild animals": 0,
+            "pets": 0,
+            "jobs": 0,
+            "fruits": 0,
+            "vegetables": 0
+        }
+    },
+    {
+        "login": "KatePril",
+        "password": "b59c67bf196a4758191e42f76670ceba",
         "progress": {
             "domesticated animals": 0,
             "wild animals": 0,
