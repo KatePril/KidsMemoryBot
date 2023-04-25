@@ -1,6 +1,6 @@
 from utils import load_users
 
-def get_rating(login):
+def get_users_rating(login):
     users = load_users()
     current_user_found = False
     reply = ''
@@ -17,6 +17,7 @@ def get_rating(login):
             if users[i].get('login') == login:
                 reply += get_current_user_rating(i, users[i]) + '\n'
                 current_user_found = True
+    return reply
 
 def get_user_rating(i, user):
     return f'{i + 1}. {user.get("login")} - {sum(user.get("progress").values())}'

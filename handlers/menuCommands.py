@@ -6,7 +6,7 @@ from keyboard.modules_kb import modules_kb
 from keyboard.main_kb import main_kb
 # from handlers.registrationCommands import current_user
 from utils_data.progress_sort import give_sorted_progress
-from utils_data.rating_body import get_rating
+from utils_data.rating_body import get_users_rating
 
 from states.MenuForm import MenuForm
 from states.playFrom import PlayFrom
@@ -53,5 +53,5 @@ async def get_process(call: types.CallbackQuery, state: FSMContext):
 
 @dp.callback_query_handler(text='rating', state = MenuForm)
 async def get_rating(call: types.CallbackQuery, state: FSMContext):
-    data = await state.get_data()
-    await call.message.answer(get_rating(data.get("login")))
+    login = (await state.get_data()).get("login")
+    await call.message.answer(get_users_rating(login))
