@@ -36,10 +36,9 @@ async def process_finish1(message: types.Message, state: FSMContext):
         correct_password = ''
         for user in load_users():
                 if user['login'] == data['login']:
-                        correct_password = user['password'] #md5 hash
+                        correct_password = user['password']
                         break
         if make_md5_password(message.text) == correct_password:
-                # await state.update_data(password=message.text)
                 await state.finish()
                 await message.answer(f'Welcome back {data["login"]}', reply_markup=menu_kb)
                 await MenuForm.main_menu.set()
