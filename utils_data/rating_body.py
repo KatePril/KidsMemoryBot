@@ -1,5 +1,4 @@
 from utils import load_users
-# from utils_data.progress_sort import sort_progress
 
 def get_users_rating(login):
     users = load_users()
