@@ -39,6 +39,18 @@
         "login": "Katerina",
         "password": "b59c67bf196a4758191e42f76670ceba",
         "progress": {
+            "domesticated animals": 8,
+            "wild animals": 10,
+            "pets": 10,
+            "jobs": 10,
+            "fruits": 9,
+            "vegetables": 9
+        }
+    },
+    {
+        "login": "KatePril",
+        "password": "b59c67bf196a4758191e42f76670ceba",
+        "progress": {
             "domesticated animals": 0,
             "wild animals": 0,
             "pets": 0,
@@ -48,8 +60,80 @@
         }
     },
     {
-        "login": "KatePril",
-        "password": "b59c67bf196a4758191e42f76670ceba",
+        "login": "K",
+        "password": "b0baee9d279d34fa1dfd71aadb908c3f",
+        "progress": {
+            "domesticated animals": 0,
+            "wild animals": 0,
+            "pets": 0,
+            "jobs": 0,
+            "fruits": 0,
+            "vegetables": 0
+        }
+    },
+    {
+        "login": "KP",
+        "password": "934b535800b1cba8f96a5d72f72f1611",
+        "progress": {
+            "domesticated animals": 0,
+            "wild animals": 0,
+            "pets": 0,
+            "jobs": 0,
+            "fruits": 0,
+            "vegetables": 0
+        }
+    },
+    {
+        "login": "KateP",
+        "password": "934b535800b1cba8f96a5d72f72f1611",
+        "progress": {
+            "domesticated animals": 0,
+            "wild animals": 0,
+            "pets": 0,
+            "jobs": 0,
+            "fruits": 0,
+            "vegetables": 0
+        }
+    },
+    {
+        "login": "PrilK",
+        "password": "934b535800b1cba8f96a5d72f72f1611",
+        "progress": {
+            "domesticated animals": 0,
+            "wild animals": 0,
+            "pets": 0,
+            "jobs": 0,
+            "fruits": 0,
+            "vegetables": 0
+        }
+    },
+    {
+        "login": "KatyaPril",
+        "password": "2be9bd7a3434f7038ca27d1918de58bd",
+        "progress": {
+            "domesticated animals": 0,
+            "wild animals": 0,
+            "pets": 0,
+            "jobs": 0,
+            "fruits": 0,
+            "vegetables": 0
+        }
+    },
+    {
+        "login": "KaterynaPril",
+        "password": "dbc4d84bfcfe2284ba11beffb853a8c4",
+        "progress": {
+            "domesticated animals": 0,
+            "wild animals": 0,
+            "pets": 0,
+            "jobs": 0,
+            "fruits": 0,
+            "vegetables": 0
+        }
+    },
+    {
+        "login": "KaterinaPril",
+        "password": "6074c6aa3488f3c2dddff2a7ca821aab",
         "progress": {
             "domesticated animals": 0,
             "wild animals": 0,
